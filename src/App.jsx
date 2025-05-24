@@ -4,6 +4,9 @@ import Home from './pages/home'
 import Users from './pages/Users'
 //import Settings from './pages/settings'
 import UserDetail from './pages/UserDetail'
+import Dogs from './pages/dogs'
+import DogDetail from './pages/DogDetail'
+
 //import './App.css'
 
 function App() {
@@ -13,6 +16,14 @@ function App() {
     {
       path: "users",
       element: <Users/>
+    },
+    {
+      path: "dogs",
+      element: <Dogs/>
+    },
+    {
+      path: "dogs/:id",
+      element: <DogDetail/>
     },
     {
       path: "users/:id",
