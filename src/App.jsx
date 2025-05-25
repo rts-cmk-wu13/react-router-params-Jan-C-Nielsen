@@ -6,6 +6,8 @@ import Users from './pages/Users'
 import UserDetail from './pages/UserDetail'
 import Dogs from './pages/dogs'
 import DogDetail from './pages/DogDetail'
+import { getDogs, getDog } from './util/fetchutil'
+import Loading from './components/Loading'
 
 //import './App.css'
 
@@ -19,11 +21,14 @@ function App() {
     },
     {
       path: "dogs",
-      element: <Dogs/>
+      element: <Dogs/>,
+      loader: getDogs,
+      
     },
     {
       path: "dogs/:id",
-      element: <DogDetail/>
+      element: <DogDetail/>,
+      loader: getDog,
     },
     {
       path: "users/:id",
@@ -31,7 +36,8 @@ function App() {
     },
     {
       path: "/",
-      element: <Home />
+      element: <Home />,
+      
     },
   ])
 
