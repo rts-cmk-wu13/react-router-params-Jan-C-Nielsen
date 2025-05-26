@@ -1,34 +1,21 @@
 import { useEffect, useState } from "react";
-import { useParams, useLoaderData } from "react-router"
 import Dogs from "./dogs";
+import { Link, useLoaderData } from "react-router"
+import "../style/dogsdetail.scss"
 
 export default function DogDetail() {
+ 
     const dog = useLoaderData();
-    // const { id } = useParams()
-    // console.log(id)
-
-    // const [dog, setDog] = useState();
-    // const [isLoading, setIsLoading] = useState(true);
-
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:4000/dogs/${id}`)
-    //         .then(response => response.json())
-    //         .then(result => setDog(result))
-    //         .finally(() => setIsLoading(false))
-    // }, [])
-
-    // return isLoading ? (<p>Loading...</p>) : (
-    //     <>
-    //     <p>Dog details</p>
-    //     <h2>{dog.breed}</h2>
-    //     </>
-    // )
-
+ 
     return  (
              <>
-            <p>Dog details</p>
-            <h2>{dog.breed}</h2>
+             <div className="dogdetail">
+             <img src={dog.image}></img>
+              <h2>{dog.breed}</h2>
+              <p> {dog.location}</p>
+            <p>The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the family Canidae, known for its loyalty, intelligence, and long-standing companionship with humans across various cultures and environments.</p>
+            <Link to={`/dogs`}>Back</Link>
+            </div>
          </>)
 
 }
